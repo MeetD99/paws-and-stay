@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { setUser } from '../redux/user/userSlice.js'
+import Logo from '../assets/image.png'
 
 const UserSignup = () => {
 
@@ -92,13 +93,10 @@ async function submitDataFacility(event){
   }
 }
 
-console.log(`error: ${error}`)
-
   return (
     <>
       <div className="reg-container">
       <div className="hero">
-          <h1>Pet</h1>
           <div className="hero-buttons">
             <div className="hero-btn" onClick={handleUserClick}>
                 <h3>Register as a Pet Owner</h3>
@@ -111,6 +109,7 @@ console.log(`error: ${error}`)
           </div>
       </div>
       {isUser ? <div className="auth">
+        <img src={Logo} alt="" width={200}/>
         <h1>Register as a Pet Owner</h1>
         <form>
           <label htmlFor="name">Name</label>
@@ -153,6 +152,7 @@ console.log(`error: ${error}`)
         </form>
       </div> : 
       <div className="auth">
+        <img src={Logo} alt="" width={200}/>
         <h1>Register as a Boarding Facility</h1>
         <form>
           <label htmlFor="name">Name</label>

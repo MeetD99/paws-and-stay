@@ -19,7 +19,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
     justify-content: center;
     flex: 2;
 }
@@ -102,10 +102,13 @@ nav{
 
 .hero{
     flex: 3;
-    background-color: #3563E9;
-    display: flex;
+    background-image: url('../src/assets/paws__stay.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     flex-direction: column;
-    justify-content: space-between;
+    display: flex;
+    justify-content: end;
 }
 
 
@@ -207,7 +210,18 @@ nav{
     gap: 30px;
 }
 
-.pets-section a button{
+.pets-section2{
+    margin: 20px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.pets-section2 h2{
+    color: #3563E9;
+}
+.pets-section a button, .pets-section2 a button{
     background-color: #3563E9;
     padding: 10px;
     color: white;
@@ -216,6 +230,215 @@ nav{
     cursor: pointer;
 }
 
-.pets-section a button:hover{
+.pets-section a button:hover, .pets-section2 a button:hover{
     transform: scale(1.1);
+}
+
+.your_pets{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+    padding: 50px;
+}
+
+.your_pets button{
+    padding: 10px;
+    background-color: #3563E9;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;   
+}
+
+.your_pets button:hover{
+    transform: scale(1.1);
+}
+
+
+
+.mypets{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.pet{
+    margin: 0 30px;
+    padding: 30px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #3563E9;
+    color: white;
+    border-radius: 20px;
+}
+
+.pet:nth-child(2n+1){
+    flex-direction: row-reverse;
+}
+
+.pet_img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.pet_img img{
+    border-radius: 50%;
+}
+
+.pets_info_details a {
+    text-decoration: underline;
+    color: white;
+    cursor: pointer;
+}
+
+.facility-services{
+    display: none;
+}
+
+/* .service_details{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dddddd;
+    height: 200px;
+    width: 90%;
+    border-radius: 5px;
+}
+
+.service_name{
+    margin-left: 20px;
+    margin-top: 20px;
+    font-weight: 700;
+}
+
+.service_rate{
+    background-color: #3563E9;
+    height: 70px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 4px;
+    /* margin-left: 20px;
+    margin-top: 80px; */
+ 
+
+    
+.myservices{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.service{
+    background-color: #3563E9;
+    margin: 0 30px;
+    padding: 30px;
+    border-radius: 20px;
+}
+.service_details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.service_name{
+    color: white;
+}
+
+.service_rate{
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #3563E9;
+}
+
+
+.facilities{
+    margin: 50px 100px;
+}
+
+.facilities h1,.facilities h2{
+    color: white;
+    font-family: "Jakarta";
+    margin-bottom: 20px;
+}
+
+.facilities-container{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.facilities-container .facility-div {
+    background-color: #3563E9;
+    padding: 30px;
+    border-radius: 20px;
+}
+.facilities-container div .fac-items{
+    color: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.facilities-container div button{
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    background-color: white;
+    color: #3563E9;
+    font-size: 15px;
+    font-family: "Jakarta";
+    border: none;
+}
+
+.facility-services{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 20px;
+    color: white;
+    font-family: "Jakarta";
+}
+
+.facility-services button{
+    margin-top: 20px;
+}
+
+
+
+.add-book-form-container{
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    place-items: center;
+}
+
+.add-book-form{
+    font-family: "Jakarta";
+    height: fit-content;
+    padding: 30px;
+    border-radius: 10px;
+    width: 50%;
+    background-image: url('../public/assets/Ads_1.png');
+    background-size: cover;
+    position: relative;
+    border: 1px solid #034C3C;
+}
+
+
+.add-book-form label{
+    color: black;
+}
+.add-book-form input{
+    display: flex;
+    flex-direction: column;
 }

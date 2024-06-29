@@ -19,6 +19,7 @@ import Footer from './components/Footer';
 import AddPets from './pages/AddPets.jsx';
 import MyPets from './pages/MyPets.jsx';
 import FacilityHome from './pages/FacilityHome.jsx';
+import AddServices from './pages/AddServices.jsx';
 
 const Layout = () => {
   return (
@@ -68,11 +69,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/facilitydashboard/addservice',
-        element: <AddPets />
-      },
-      {
-        path: '/facilitydashboard/myservices',
-        element: <MyPets />
+        element: <AddServices />
       },
     ]
   }
@@ -85,3 +82,32 @@ export default function App() {
     </RouterProvider>
   );
 }
+
+import { useState } from 'react';
+import axios from 'axios';
+
+/*
+function Pay() {
+  const handlePayment = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await axios.get('http://localhost:8000/payment');
+
+      if (res && res.data) {
+        window.location.href = res.data.links[1].href;
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
+  return (
+    <>
+      <button onClick={handlePayment}>Proceed to Payment</button>
+    </>
+  );
+}
+
+export default App;
+*/

@@ -2,12 +2,17 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { setUser } from '../redux/user/userSlice.js'
 import { useDispatch } from 'react-redux';
+import Logo from '../assets/image.png'
 
 const UserSignin = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch()
 
   const [isUser, setIsUser] = useState(true);
+  const [boarderInputs, setBoarderInputs] = useState({
+    email: "",
+    password: ""
+  })
   const [inputs, setInputs] = useState({
     email: "",
     password: ""
@@ -15,6 +20,10 @@ const UserSignin = () => {
 
   const handleChange = e => {
     setInputs(prev => ({...prev, [e.target.name]: e.target.value}))
+  }
+
+  const handleBoarderChange = e => {
+    setBoarderInputs(prev => ({...prev, [e.target.name]: e.target.value}))
   }
 
   const handleUserClick = () => {
@@ -57,7 +66,7 @@ const UserSignin = () => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(inputs)
+            body: JSON.stringify(boarderInputs)
         })
         const data = await res.json()
         // console.log(data)
@@ -66,6 +75,7 @@ const UserSignin = () => {
             console.log(data.message)
             return
         }
+        dispatch(setUser(data));
         navigate('/facilitydashboard')
     }
     catch(err){
@@ -77,7 +87,6 @@ const UserSignin = () => {
     <>
       <div className="reg-container">
       <div className="hero">
-          <h1>Pet</h1>
           <div className="hero-buttons">
             <div className="hero-btn" onClick={handleUserClick}>
                 <h3>Login as a Pet Owner</h3>
@@ -90,6 +99,7 @@ const UserSignin = () => {
           </div>
       </div>
       {isUser ? <div className="auth">
+        <img src={Logo} alt="" width={200}/>
         <h1>Login as Pet Owner</h1>
         <form>
           <label htmlFor="email">Email ID</label>
@@ -115,6 +125,7 @@ const UserSignin = () => {
           </span>
         </form>
       </div> : <div className="auth">
+      <img src={Logo} alt="" width={200}/>
         <h1>Login as Boarding Facility</h1>
         <form>
           <label htmlFor="email">Email ID</label>
@@ -123,7 +134,7 @@ const UserSignin = () => {
             type="email"
             placeholder="Enter your Email ID"
             name="email"
-            onChange={handleChange}
+            onChange={handleBoarderChange}
           />
           <label htmlFor="password">Password</label>
           <input
@@ -131,7 +142,7 @@ const UserSignin = () => {
             type="password"
             placeholder="Enter a Password"
             name="password"
-            onChange={handleChange}
+            onChange={handleBoarderChange}
           />
           <button onClick={submitDataFacility}>Login</button>
           {/* {err && <p>{err}</p>} */}

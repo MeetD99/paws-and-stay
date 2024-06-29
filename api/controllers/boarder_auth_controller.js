@@ -57,3 +57,41 @@ export const getBoarder = async (req, res, next)=>{
         next(err)
     }
 }
+
+export const upServices = async (req, res, next)=>{
+    const { name, rate, userId } = req.body;
+    try{
+        await Boarding.findByIdAndUpdate(
+            userId,
+            { $push: { services: {name, rate}} },
+            { new: true, useFindAndModify: false }
+        )
+        res.status(200).json({'message': 'new sevice added'})
+        
+    }catch(err){
+        next(err);
+    }
+}
+
+
+
+export const myservices = async (req, res, next)=>{
+    const { userId } = req.body;
+
+    try{
+        if(!userId){
+            res.status(200).json({message: "userId not found!"})
+        }
+        const findinguser = await Boarding.findOne({ _id: userId })
+        if(!findinguser){
+            res.status(200).json({message: "user not found!"})
+        }
+        const userServices = findinguser.services
+        res.status(200).json({message: "succsesfully fetched services!" , userServices})
+            
+        
+    }catch(err){
+        next(err);
+    }
+}
+

@@ -20,14 +20,17 @@ export const create = async (req, res, next)=>{
 
 
 export const getPets = async (req, res, next)=>{
-    const { userId }= req.body;
-    console.log(userId)
+    const { userId } = req.body;
 
     try{
-        const findinguser = await User.findOne({ _id: userId })
-        console.log(findinguser)
+        if(!userId){
+            res.status(200).json({message: "userId not found!"})
+        }
+        const findinguser = await User.findOne({ email: userId })
+        if(!findinguser){
+            res.status(200).json({message: "user not found!"})
+        }
         const userPetIds = findinguser.pets
-
         const userPets = await Pet.find({_id : { $in: userPetIds}})
         res.status(200).json({message: "succsesfully fetched pets!" , userPets})
             

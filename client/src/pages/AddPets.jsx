@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom'
 const AddPets = () => {
 
     const navigate = useNavigate();
-    const currentUser = useSelector((state)=>state.user)
+    const currentUser = useSelector((state)=>state.user.user)
 
     const [inputs, setInputs] = useState({
         name: "",
@@ -18,6 +18,7 @@ const AddPets = () => {
         records: "",
         user:  currentUser._id
       })
+      
 
       const [ image, setImage ] = useState(null) 
       const [ loading, setLoading ] = React.useState(false)
