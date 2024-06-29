@@ -1,0 +1,221 @@
+@font-face {
+    font-family: 'Jakarta';
+    src: url('../fonts/plus-jakarta-sans/PlusJakartaDisplay-Bold.otf');
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.reg-container{
+    height: 100vh;
+    display: flex;
+}
+
+
+
+.auth{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    flex: 2;
+}
+
+.auth form{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    gap: 10px;
+    font-family: "Jakarta";
+}
+
+.auth h1{
+    color: #3563E9;
+    font-family: "Jakarta";
+}
+
+.auth form input{
+    width: 20vw;
+    padding: 10px;
+}
+
+.auth form button{
+    width: 100%;
+    padding: 10px;
+    background-color: #3563E9;
+    color: white;
+    font-family: "Jakarta";
+    border-radius: 5px;
+}
+
+.auth form span{
+    color: grey;
+}
+
+.auth form a{
+    color: black;
+    text-decoration: none;
+}
+
+.home-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.home-buttons button{
+    border-radius: 15px;
+    color: white;
+    background-color: #3563E9;
+    padding: 5px 10px;
+    border: none;
+}
+
+.home-buttons .signout{
+    background-color: #E93535;
+}
+
+nav{
+    width: 100%;
+}
+
+.navbar-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.brandName a{
+    color: #3563E9;
+    text-decoration: none;
+}
+
+.pets-form-container{
+    margin-top: 20px;
+}
+
+.hero{
+    flex: 3;
+    background-color: #3563E9;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.hero-buttons{
+    padding: 0 40px 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-btn{
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.hero-btn:hover{
+    transform: scale(1.1);
+}
+.hero-btn h3{
+    color: #3563E9;
+}
+
+.hero-btn p{
+    color: grey;
+}
+
+.taglines{
+    justify-content: space-evenly;
+    display: flex;
+}
+
+.tagline1{
+    height: 200px;
+    width: 40%;
+    background-image: url('../public/assets/Ads_1.png');
+    background-size: cover;
+    padding: 20px 20px 20px;
+    font-size: 40px;
+    color: white;
+}
+
+.tagline2{
+    height: 200px;
+    width: 40%;
+    background-image: url('../public/assets/Ads_2.png');
+    background-size: cover;
+    padding: 20px 20px 20px;
+    font-size: 40px;
+    color: white;
+}
+
+.book_button_tagline{
+    margin-bottom: 10px;
+    margin-left: 10px;
+    background-color: #3563E9;
+}
+
+.listheading{
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: larger;
+}
+
+.facilities_options{
+    display: block;
+    margin-left: 20px;
+}
+
+.facility1{
+    height: 200px;
+    width: 95%;
+    background-color: #dddddd;
+    font-size: medium;
+    font-weight: 400;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    padding: 50px 50px 50px 50px;
+}
+
+.book_button button{
+    background-color: #3563E9;
+    /* margin-bottom: 20px;
+    margin-right: 20px; */
+    justify-content: right;
+    height: 30px;
+    width: 80px;
+    border-radius: 4px;
+}
+
+.pets-section{
+    margin: 20px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 30px;
+}
+
+.pets-section a button{
+    background-color: #3563E9;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.pets-section a button:hover{
+    transform: scale(1.1);
+}
