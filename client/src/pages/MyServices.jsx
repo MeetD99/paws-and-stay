@@ -9,7 +9,7 @@ const MyServices = () => {
     useEffect(()=>{
         async function getPetData(){
             try{
-                const res = await fetch('/api/boarder/myservices', {
+                const res = await fetch('https://paws-and-stay-backend.vercel.app/api/boarder/myservices', {
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json'

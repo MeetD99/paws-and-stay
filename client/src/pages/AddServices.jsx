@@ -20,7 +20,7 @@ const AddServices = () => {
   async function submitData(event){
     event.preventDefault()
     try{
-        const res = await fetch('/api/boarder/update/services', {
+        const res = await fetch('https://paws-and-stay-backend.vercel.app/api/boarder/update/services', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

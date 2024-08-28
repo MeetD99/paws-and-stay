@@ -57,7 +57,7 @@ const AddPets = () => {
                 
             const updatedFormData = {...inputs, records : downloadURL}
        
-            const res = await fetch('/api/pet/add', {
+            const res = await fetch('https://paws-and-stay-backend.vercel.app/api/pet/add', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

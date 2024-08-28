@@ -36,7 +36,7 @@ const UserSignin = () => {
   async function submitData(event){
     event.preventDefault()
     try{
-        const res = await fetch('/api/user/auth/signin', {
+        const res = await fetch('https://paws-and-stay-backend.vercel.app/api/user/auth/signin', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -61,7 +61,7 @@ const UserSignin = () => {
   async function submitDataFacility(event){
     event.preventDefault()
     try{
-        const res = await fetch('/api/boarder/auth/signin', {
+        const res = await fetch('https://paws-and-stay-backend.vercel.app/api/boarder/auth/signin', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

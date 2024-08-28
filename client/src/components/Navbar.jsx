@@ -14,7 +14,7 @@ const Navbar = () => {
   
   const signoutUser = async()=>{
     try{
-      const res = await fetch('/api/user/auth/signout')
+      const res = await fetch('https://paws-and-stay-backend.vercel.app/api/user/auth/signout')
       const data = res.json()
       if(data.success === false){
         console.log(data.message)

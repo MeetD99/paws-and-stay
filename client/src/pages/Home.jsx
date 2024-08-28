@@ -11,7 +11,7 @@ export default function Home() {
   useEffect(()=>{
     async function getFacilities(){
       try{
-          const res = await fetch('/api/boarder/getBoarder', {
+          const res = await fetch('https://paws-and-stay-backend.vercel.app/api/boarder/getBoarder', {
               method: "GET",
               headers: {
                   'Content-Type': 'application/json'

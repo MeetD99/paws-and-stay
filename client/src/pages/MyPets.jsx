@@ -10,7 +10,7 @@ const MyPets = () => {
     useEffect(()=>{
         async function getPetData(){
             try{
-                const res = await fetch('/api/pet/getPets', {
+                const res = await fetch('https://paws-and-stay-backend.vercel.app/api/pet/getPets', {
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json'
